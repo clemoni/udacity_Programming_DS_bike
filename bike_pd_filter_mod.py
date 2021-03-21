@@ -122,3 +122,9 @@ def filt_time_period(df, filter_choice):
             df = df_filter_per_month(df, chosen_time_add)
 
     return df
+
+
+if(__name__ == '__main__'):
+    city = 'chicago'
+    df = get_city_csv(convert_city(city))
+    print(df)
