@@ -49,13 +49,14 @@ def time_stats(df):
 
 def station_stats(df):
     start_time = time.time()
-    data = dict()
-    data['Start Station'] = df['Start Station'].mode()[0]
-    data['End Station'] = df['End Station'].mode()[0]
-    # print(df['End Station'].value_counts())
+    data = list()
+    data.append(df['Start Station'].mode()[0])
+    data.append(df['End Station'].mode()[0])
     df['Station Start/End'] = df['Start Station'] + ' || ' + df['End Station']
-    data['Station Start/End'] = df['Station Start/End'].mode()[0]
-    df_station = pd.DataFrame(data=data, index=['Most Frequent'])
+    data.append(df['Station Start/End'].mode()[0])
+    index_list = ['Start Station', 'End Station', 'Station Start/End']
+    df_station = pd.DataFrame(
+        data={'Most Frequent': data}, index=index_list)
     print('\nPopular stations and trip:')
     print(df_station)
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -75,6 +76,7 @@ def trip_duration_stats(df):
     print(df_trip_duration)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
+
 ######################################
 ##########  4.1 USER COUNT  ##########
 
