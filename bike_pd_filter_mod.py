@@ -124,7 +124,11 @@ def filt_time_period(df, filter_choice):
     return df
 
 
-if(__name__ == '__main__'):
+def main():
     city = 'chicago'
     df = get_city_csv(convert_city(city))
     print(df)
+
+
+if(__name__ == '__main__'):
+    main()

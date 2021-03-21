@@ -193,6 +193,10 @@ def is_valid_choice_recurcive():
         return choice_given
 
 
-if(__name__ == '__main__'):
+def main():
     print('testing')
     is_valid_choice_recurcive()
+
+
+if(__name__ == '__main__'):
+    main()
