@@ -158,7 +158,7 @@ def is_valid_choice(answers):
         print(e)
         return is_valid_choice(answers)
     else:
-        return original_value
+        return tested_value
 
 
 def is_valid_choice_recurcive():

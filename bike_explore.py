@@ -7,9 +7,7 @@ import bike_pd_filter_mod as bf
 
 pd.set_option('display.max_colwidth', None)
 
-
 filter_choice = is_valid_choice()
-
 
 ####### FILTER DF ACCORDING TO USER ANSWER ######
 city_name = bf.convert_city(filter_choice['city'])
